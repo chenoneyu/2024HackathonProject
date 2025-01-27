@@ -1,0 +1,251 @@
+<html>
+<head>
+<title>Main.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #0033b3;}
+.s1 { color: #080808;}
+.s2 { color: #067d17;}
+.s3 { color: #1750eb;}
+.s4 { color: #0037a6;}
+</style>
+</head>
+<body bgcolor="#ffffff">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#c0c0c0" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+Main.java</font>
+</center></td></tr></table>
+<pre><span class="s0">import </span><span class="s1">java.text.DecimalFormat;</span>
+<span class="s0">import </span><span class="s1">java.util.Scanner;</span>
+
+<span class="s0">public class </span><span class="s1">Main {</span>
+    <span class="s0">public static void </span><span class="s1">main(String[] args) {</span>
+        <span class="s1">Generate Generate = </span><span class="s0">new </span><span class="s1">Generate();</span>
+        <span class="s1">String choice1,choice2,choice3,choice4=</span><span class="s2">&quot;1&quot;</span><span class="s1">,abc=</span><span class="s2">&quot;1&quot;</span><span class="s1">;</span>
+        <span class="s0">double</span><span class="s1">[] random = </span><span class="s0">new double</span><span class="s1">[</span><span class="s3">21</span><span class="s1">];</span>
+        <span class="s0">int </span><span class="s1">I=</span><span class="s3">0</span><span class="s1">,II=</span><span class="s3">0</span><span class="s1">,III=</span><span class="s3">0</span><span class="s1">,dirt=</span><span class="s3">0</span><span class="s1">;</span>
+
+        <span class="s1">System.out.print(</span><span class="s2">&quot;Do you want to test Fresh Water Quality?&quot;</span><span class="s1">);</span>
+        <span class="s1">System.out.print(</span><span class="s2">&quot; (Type y or n): &quot;</span><span class="s1">);</span>
+        <span class="s1">Scanner scanner = </span><span class="s0">new </span><span class="s1">Scanner(System.in);</span>
+        <span class="s1">choice1 = scanner.next();</span>
+
+        <span class="s0">if </span><span class="s1">(choice1.equals(</span><span class="s2">&quot;y&quot;</span><span class="s1">)){</span>
+        <span class="s1">}</span><span class="s0">else</span><span class="s1">{</span>
+            <span class="s1">Generate.Generation(</span><span class="s2">&quot;Stopping the Program&quot;</span><span class="s1">,</span><span class="s3">333</span><span class="s1">);</span>
+            <span class="s0">return</span><span class="s1">;</span>
+        <span class="s1">}</span>
+
+        <span class="s1">System.out.print(</span><span class="s2">&quot;Type </span><span class="s4">\&quot;</span><span class="s2">y</span><span class="s4">\&quot; </span><span class="s2">to confirm to generate a random quality of fresh water: &quot;</span><span class="s1">);</span>
+        <span class="s1">choice2 = scanner.next();</span>
+
+        <span class="s0">if </span><span class="s1">(choice2.equals(</span><span class="s2">&quot;y&quot;</span><span class="s1">)){</span>
+        <span class="s1">}</span><span class="s0">else</span><span class="s1">{</span>
+            <span class="s1">Generate.Generation(</span><span class="s2">&quot;Stopping the Program&quot;</span><span class="s1">,</span><span class="s3">333</span><span class="s1">);</span>
+            <span class="s0">return</span><span class="s1">;</span>
+        <span class="s1">}</span>
+
+        <span class="s1">System.out.println();</span>
+        <span class="s1">Generate.Generation(</span><span class="s2">&quot;Generating your random water&quot;</span><span class="s1">,</span><span class="s3">333</span><span class="s1">);</span>
+
+        <span class="s1">System.out.println();</span>
+        <span class="s1">System.out.println(</span><span class="s2">&quot;The Random Water Quality Data(Unit: mg/L): &quot;</span><span class="s1">);</span>
+        <span class="s0">for </span><span class="s1">(</span><span class="s0">int </span><span class="s1">i = </span><span class="s3">0</span><span class="s1">; i &lt; </span><span class="s3">21</span><span class="s1">; i++) {</span>
+            <span class="s0">double </span><span class="s1">randomValue = (constant.D[i]) + (constant.E[i] - (constant.D[i])) * Math.random();</span>
+            <span class="s1">DecimalFormat df = </span><span class="s0">new </span><span class="s1">DecimalFormat(</span><span class="s2">&quot;0.00000&quot;</span><span class="s1">);</span>
+            <span class="s1">System.out.println(constant.F[i]+</span><span class="s2">&quot; Amount: &quot;</span><span class="s1">+df.format(randomValue));</span>
+            <span class="s1">random[i] = randomValue;</span>
+            <span class="s0">if</span><span class="s1">(randomValue &lt;= constant.A[i]){</span>
+                <span class="s1">I++;</span>
+            <span class="s1">}</span><span class="s0">else if</span><span class="s1">(randomValue &lt;= constant.B[i]*</span><span class="s3">1.2</span><span class="s1">){</span>
+                <span class="s1">II++;</span>
+            <span class="s1">}</span><span class="s0">else if</span><span class="s1">(randomValue &lt;= constant.C[i]){</span>
+                <span class="s1">III++;</span>
+            <span class="s1">}</span><span class="s0">else </span><span class="s1">{</span>
+                <span class="s1">dirt++;</span>
+            <span class="s1">}</span>
+        <span class="s1">}</span>
+        <span class="s1">System.out.println();</span>
+
+        <span class="s0">int</span><span class="s1">[] I1 = </span><span class="s0">new int</span><span class="s1">[I], II1 = </span><span class="s0">new int</span><span class="s1">[II], III1 = </span><span class="s0">new int</span><span class="s1">[III], dirt1 = </span><span class="s0">new int</span><span class="s1">[dirt];</span>
+        <span class="s0">int </span><span class="s1">a=</span><span class="s3">0</span><span class="s1">,b=</span><span class="s3">0</span><span class="s1">,c=</span><span class="s3">0</span><span class="s1">,d=</span><span class="s3">0</span><span class="s1">;</span>
+
+        <span class="s0">for</span><span class="s1">(</span><span class="s0">int </span><span class="s1">i = </span><span class="s3">0 </span><span class="s1">; i &lt; </span><span class="s3">21 </span><span class="s1">; i++){</span>
+            <span class="s0">if</span><span class="s1">(random[i] &lt;= constant.A[i]){</span>
+                <span class="s1">I1[a]=i;</span>
+                <span class="s1">a++;</span>
+            <span class="s1">}</span><span class="s0">else if</span><span class="s1">(random[i] &lt;= constant.B[i]*</span><span class="s3">1.2</span><span class="s1">){</span>
+                <span class="s1">II1[b]=i;</span>
+                <span class="s1">b++;</span>
+            <span class="s1">}</span><span class="s0">else if</span><span class="s1">(random[i] &lt;= constant.C[i]){</span>
+                <span class="s1">III1[c]=i;</span>
+                <span class="s1">c++;</span>
+            <span class="s1">}</span><span class="s0">else </span><span class="s1">{</span>
+                <span class="s1">dirt1[d]=i;</span>
+                <span class="s1">d++;</span>
+            <span class="s1">}</span>
+        <span class="s1">}</span>
+
+        <span class="s1">System.out.print(</span><span class="s2">&quot;Type </span><span class="s4">\&quot;</span><span class="s2">y</span><span class="s4">\&quot; </span><span class="s2">to generate a water quality report of your water: &quot;</span><span class="s1">);</span>
+        <span class="s1">choice3 = scanner.next();</span>
+
+        <span class="s0">if </span><span class="s1">(choice3.equals(</span><span class="s2">&quot;y&quot;</span><span class="s1">)){</span>
+        <span class="s1">}</span><span class="s0">else</span><span class="s1">{</span>
+            <span class="s1">Generate.Generation(</span><span class="s2">&quot;Stopping the Program&quot;</span><span class="s1">,</span><span class="s3">333</span><span class="s1">);</span>
+            <span class="s0">return</span><span class="s1">;</span>
+        <span class="s1">}</span>
+
+        <span class="s1">System.out.println();</span>
+        <span class="s1">Generate.Generation(</span><span class="s2">&quot;Generating your water Quality Report&quot;</span><span class="s1">,</span><span class="s3">333</span><span class="s1">);</span>
+
+        <span class="s1">System.out.println();</span>
+        <span class="s1">System.out.println(</span><span class="s2">&quot;Your Water Quality Report: &quot;</span><span class="s1">);</span>
+        <span class="s0">if</span><span class="s1">(I&gt;=</span><span class="s3">5 </span><span class="s1">&amp;&amp; dirt&lt;=</span><span class="s3">3 </span><span class="s1">&amp;&amp; I+II&gt;=III+dirt+</span><span class="s3">1</span><span class="s1">) {</span>
+            <span class="s1">System.out.println(</span><span class="s2">&quot;GREAT!!! Your overall water quality is Class I. &quot;</span><span class="s1">);</span>
+            <span class="s1">System.out.println(</span><span class="s2">&quot;Which is the best of the three levels, you can be very confident of drinking the water!&quot;</span><span class="s1">);</span>
+        <span class="s1">}</span><span class="s0">else if</span><span class="s1">(dirt&gt;</span><span class="s3">5</span><span class="s1">) {</span>
+            <span class="s1">System.out.println(</span><span class="s2">&quot;DANGERRRRR!!!!! YOUR WATER IS VERY DIRTY!!!&quot;</span><span class="s1">);</span>
+            <span class="s1">System.out.println(</span><span class="s2">&quot;Your water doesn't meet any of the standard! You mustn't drink it!&quot;</span><span class="s1">);</span>
+        <span class="s1">}</span><span class="s0">else if</span><span class="s1">(I+II&gt;III+dirt) {</span>
+            <span class="s1">System.out.println(</span><span class="s2">&quot;Good. Your overall water quality is Class II. &quot;</span><span class="s1">);</span>
+            <span class="s1">System.out.println(</span><span class="s2">&quot;Which is the second level of the water, you can drink the water after a few treatments.&quot;</span><span class="s1">);</span>
+        <span class="s1">}</span><span class="s0">else if</span><span class="s1">(I+II+III&gt;dirt) {</span>
+            <span class="s1">System.out.println(</span><span class="s2">&quot;Be careful. Your overall water quality is Class III. &quot;</span><span class="s1">);</span>
+            <span class="s1">System.out.println(</span><span class="s2">&quot;Which is the last level of the water, you can drink the water after a very professional and detailed treatment.&quot;</span><span class="s1">);</span>
+        <span class="s1">}</span><span class="s0">else</span><span class="s1">{</span>
+            <span class="s1">System.out.println(</span><span class="s2">&quot;DANGERRRRR!!!!! YOUR WATER IS VERY DIRTY!!!&quot;</span><span class="s1">);</span>
+            <span class="s1">System.out.println(</span><span class="s2">&quot;Your water doesn't meet any of the standard! You mustn't drink it!&quot;</span><span class="s1">);</span>
+        <span class="s1">}</span>
+        <span class="s1">System.out.println();</span>
+
+        <span class="s1">System.out.println(</span><span class="s2">&quot;Of the 21 indicators of different substances tested, &quot;</span><span class="s1">);</span>
+
+        <span class="s1">System.out.println(I + </span><span class="s2">&quot; met Class I water quality standards, &quot;</span><span class="s1">);</span>
+
+        <span class="s1">System.out.println(II + </span><span class="s2">&quot; met Class II water quality standards, &quot;</span><span class="s1">);</span>
+
+        <span class="s1">System.out.println(III + </span><span class="s2">&quot; met Class III water quality standards, &quot;</span><span class="s1">);</span>
+        <span class="s1">System.out.print(</span><span class="s2">&quot;which is &quot;</span><span class="s1">);</span>
+        <span class="s0">for</span><span class="s1">(</span><span class="s0">int </span><span class="s1">i=</span><span class="s3">0</span><span class="s1">;i&lt;III;i++){</span>
+            <span class="s1">System.out.print(constant.F[III1[i]]);</span>
+            <span class="s1">System.out.print(</span><span class="s2">&quot;, &quot;</span><span class="s1">);</span>
+        <span class="s1">}</span>
+        <span class="s1">System.out.println();</span>
+
+        <span class="s1">System.out.println(dirt + </span><span class="s2">&quot; did not meet any water quality standards.  &quot;</span><span class="s1">);</span>
+        <span class="s1">System.out.print(</span><span class="s2">&quot;which is &quot;</span><span class="s1">);</span>
+        <span class="s0">for</span><span class="s1">(</span><span class="s0">int </span><span class="s1">i=</span><span class="s3">0</span><span class="s1">;i&lt;dirt;i++){</span>
+            <span class="s1">System.out.print(constant.F[dirt1[i]]);</span>
+            <span class="s1">System.out.print(</span><span class="s2">&quot;, &quot;</span><span class="s1">);</span>
+        <span class="s1">}</span>
+        <span class="s1">System.out.println();</span>
+
+        <span class="s1">System.out.println();</span>
+        <span class="s1">System.out.print(</span><span class="s2">&quot;Type the elements you need to know how to handle (type n for no need): &quot;</span><span class="s1">);</span>
+        <span class="s0">while</span><span class="s1">(</span><span class="s0">true</span><span class="s1">) {</span>
+            <span class="s1">choice4 = scanner.next();</span>
+            <span class="s0">if</span><span class="s1">(!choice4.equals(abc)){</span>
+                <span class="s1">abc=choice4;</span>
+                <span class="s1">Generate.Generation(</span><span class="s2">&quot;Generating&quot;</span><span class="s1">,</span><span class="s3">180</span><span class="s1">);</span>
+                <span class="s1">System.out.println();</span>
+                <span class="s0">switch</span><span class="s1">(choice4) {</span>
+                    <span class="s0">case </span><span class="s2">&quot;Permanganate&quot;</span><span class="s1">:</span>
+                        <span class="s1">System.out.println(</span><span class="s2">&quot;Please add some Sodium Thiosulfate.&quot;</span><span class="s1">);</span>
+                        <span class="s1">System.out.println(</span><span class="s2">&quot;It reacts with permanganate to form non-toxic products and is widely used in water treatment.&quot;</span><span class="s1">);</span>
+                        <span class="s0">break</span><span class="s1">;</span>
+                    <span class="s0">case </span><span class="s2">&quot;Chemical Oxygen Demand&quot;</span><span class="s1">:</span>
+                        <span class="s1">System.out.println(</span><span class="s2">&quot;Please decrease the organic and oxidizable inorganic matter that contributes to COD.&quot;</span><span class="s1">);</span>
+                        <span class="s1">System.out.println(</span><span class="s2">&quot;You can use methods such as Chemical Precipitation or Physics Filtration&quot;</span><span class="s1">);</span>
+                        <span class="s0">break</span><span class="s1">;</span>
+                    <span class="s0">case </span><span class="s2">&quot;Five-day Biochemical Oxygen Demand&quot;</span><span class="s1">:</span>
+                        <span class="s1">System.out.println(</span><span class="s2">&quot;Please use the method called Activated Sludge Process: &quot;</span><span class="s1">);</span>
+                        <span class="s1">System.out.println(</span><span class="s2">&quot;Which is commonly used aerobic treatment where microorganisms degrade organic pollutants, significantly lowering BOD levels.&quot;</span><span class="s1">);</span>
+                        <span class="s0">break</span><span class="s1">;</span>
+                    <span class="s0">case </span><span class="s2">&quot;Ammonia Nitrogen&quot;</span><span class="s1">:</span>
+                        <span class="s1">System.out.println(</span><span class="s2">&quot;Please use nitrifying bacteria (e.g., Nitrosomonas and Nitrobacter).&quot;</span><span class="s1">);</span>
+                        <span class="s1">System.out.println(</span><span class="s2">&quot;Ammonia Nitrogen will be biologically converted to nitrite (NO₂⁻) and then to nitrate (NO₃⁻)&quot;</span><span class="s1">);</span>
+                        <span class="s0">break</span><span class="s1">;</span>
+                    <span class="s0">case </span><span class="s2">&quot;Phosphorus&quot;</span><span class="s1">:</span>
+                        <span class="s1">System.out.println(</span><span class="s2">&quot;Please add use the Alum Sedimentation Method. &quot;</span><span class="s1">);</span>
+                        <span class="s1">System.out.println(</span><span class="s2">&quot;Alum can precipitate phosphorus as aluminum phosphate, which can then be removed through sedimentation or filtration.&quot;</span><span class="s1">);</span>
+                        <span class="s0">break</span><span class="s1">;</span>
+                    <span class="s0">case </span><span class="s2">&quot;Nitrogen&quot;</span><span class="s1">:</span>
+                        <span class="s1">System.out.println(</span><span class="s2">&quot;Please add chlorine in sufficient quantities&quot;</span><span class="s1">);</span>
+                        <span class="s1">System.out.println(</span><span class="s2">&quot;It can oxidize ammonia into nitrogen gas.&quot;</span><span class="s1">);</span>
+                        <span class="s0">break</span><span class="s1">;</span>
+                    <span class="s0">case </span><span class="s2">&quot;Copper&quot;</span><span class="s1">:</span>
+                        <span class="s1">System.out.println(</span><span class="s2">&quot;Please use the method called Ion Exchange Resins.&quot;</span><span class="s1">);</span>
+                        <span class="s1">System.out.println(</span><span class="s2">&quot;Copper ions (Cu²⁺) can be exchanged with other ions (e.g. sodium or hydrogen) using ion exchange resins.&quot;</span><span class="s1">);</span>
+                        <span class="s0">break</span><span class="s1">;</span>
+                    <span class="s0">case </span><span class="s2">&quot;Zinc&quot;</span><span class="s1">:</span>
+                        <span class="s1">System.out.println(</span><span class="s2">&quot;Please use the method called Ion Exchange Resins.&quot;</span><span class="s1">);</span>
+                        <span class="s1">System.out.println(</span><span class="s2">&quot;Zinc ions (Zn²⁺) can be exchanged with other ions (e.g. sodium or hydrogen) using ion exchange resins.&quot;</span><span class="s1">);</span>
+                        <span class="s0">break</span><span class="s1">;</span>
+                    <span class="s0">case </span><span class="s2">&quot;Fluoride&quot;</span><span class="s1">:</span>
+                        <span class="s1">System.out.println(</span><span class="s2">&quot;Please use the method called Reverse Osmosis. &quot;</span><span class="s1">);</span>
+                        <span class="s1">System.out.println(</span><span class="s2">&quot;This process effectively removes fluoride by forcing water through a semipermeable membrane, leaving fluoride and other contaminants behind.&quot;</span><span class="s1">);</span>
+                        <span class="s0">break</span><span class="s1">;</span>
+                    <span class="s0">case </span><span class="s2">&quot;Selenium&quot;</span><span class="s1">:</span>
+                        <span class="s1">System.out.println(</span><span class="s2">&quot;Please use some activated alumina.&quot;</span><span class="s1">);</span>
+                        <span class="s1">System.out.println(</span><span class="s2">&quot;This technique involves passing water through a medium that effectively binds selenium, allowing for its removal.&quot;</span><span class="s1">);</span>
+                        <span class="s0">break</span><span class="s1">;</span>
+                    <span class="s0">case </span><span class="s2">&quot;Arsenic&quot;</span><span class="s1">:</span>
+                        <span class="s1">System.out.println(</span><span class="s2">&quot;Please use the method called Reverse Osmosis. &quot;</span><span class="s1">);</span>
+                        <span class="s1">System.out.println(</span><span class="s2">&quot;It is highly effective at removing arsenic and other contaminants.&quot;</span><span class="s1">);</span>
+                        <span class="s0">break</span><span class="s1">;</span>
+                    <span class="s0">case </span><span class="s2">&quot;Mercury&quot;</span><span class="s1">:</span>
+                        <span class="s1">System.out.println(</span><span class="s2">&quot;Please add some Ferrous Sulfate.&quot;</span><span class="s1">);</span>
+                        <span class="s1">System.out.println(</span><span class="s2">&quot;It can react with mercury to form insoluble compounds that can be removed through filtration.&quot;</span><span class="s1">);</span>
+                        <span class="s0">break</span><span class="s1">;</span>
+                    <span class="s0">case </span><span class="s2">&quot;Cadmium&quot;</span><span class="s1">:</span>
+                        <span class="s1">System.out.println(</span><span class="s2">&quot;Please add some Sodium Sulfide.&quot;</span><span class="s1">);</span>
+                        <span class="s1">System.out.println(</span><span class="s2">&quot;This can convert cadmium into insoluble forms that can be easily removed.&quot;</span><span class="s1">);</span>
+                        <span class="s0">break</span><span class="s1">;</span>
+                    <span class="s0">case </span><span class="s2">&quot;Chromium&quot;</span><span class="s1">:</span>
+                        <span class="s1">System.out.println(</span><span class="s2">&quot;Please add some Sodium Bisulfite.&quot;</span><span class="s1">);</span>
+                        <span class="s1">System.out.println(</span><span class="s2">&quot;It can reduce hexavalent chromium to trivalent chromium, which is less toxic and less soluble.&quot;</span><span class="s1">);</span>
+                        <span class="s0">break</span><span class="s1">;</span>
+                    <span class="s0">case </span><span class="s2">&quot;Lead&quot;</span><span class="s1">:</span>
+                        <span class="s1">System.out.println(</span><span class="s2">&quot;Please add some Phosphates (like Sodium Tripolyphosphate). &quot;</span><span class="s1">);</span>
+                        <span class="s1">System.out.println(</span><span class="s2">&quot;They can be added to the water to form stable lead phosphate compounds that precipitate and can be removed through filtration.&quot;</span><span class="s1">);</span>
+                        <span class="s0">break</span><span class="s1">;</span>
+                    <span class="s0">case </span><span class="s2">&quot;Cyanide&quot;</span><span class="s1">:</span>
+                        <span class="s1">System.out.println(</span><span class="s2">&quot;Please add some Chlorine or Chlorine Dioxide. &quot;</span><span class="s1">);</span>
+                        <span class="s1">System.out.println(</span><span class="s2">&quot;These agents can oxidize cyanide into less toxic compounds, such as cyanate, which can be further treated or removed.&quot;</span><span class="s1">);</span>
+                        <span class="s0">break</span><span class="s1">;</span>
+                    <span class="s0">case </span><span class="s2">&quot;Volatile Phenol&quot;</span><span class="s1">:</span>
+                        <span class="s1">System.out.println(</span><span class="s2">&quot;Please use the method called Activated Carbon Adsorption. &quot;</span><span class="s1">);</span>
+                        <span class="s1">System.out.println(</span><span class="s2">&quot;It is highly effective at adsorbing volatile phenols due to its large surface area and porous structure. Phenols will adhere to the carbon.&quot;</span><span class="s1">);</span>
+                        <span class="s0">break</span><span class="s1">;</span>
+                    <span class="s0">case </span><span class="s2">&quot;Petroleum&quot;</span><span class="s1">:</span>
+                        <span class="s1">System.out.println(</span><span class="s2">&quot;Please use the method called Bioremediation. &quot;</span><span class="s1">);</span>
+                        <span class="s1">System.out.println(</span><span class="s2">&quot;This method involves using microorganisms to degrade petroleum hydrocarbons into less harmful substances. Specific bacteria can metabolize hydrocarbons, making this an eco-friendly option.&quot;</span><span class="s1">);</span>
+                        <span class="s0">break</span><span class="s1">;</span>
+                    <span class="s0">case </span><span class="s2">&quot;Anionic Surfactants&quot;</span><span class="s1">:</span>
+                        <span class="s1">System.out.println(</span><span class="s2">&quot;Please add coagulants like aluminum sulfate or iron salts. &quot;</span><span class="s1">);</span>
+                        <span class="s1">System.out.println(</span><span class="s2">&quot;It can help agglomerate surfactant molecules into larger particles (flocs), which can then be removed through sedimentation or filtration.&quot;</span><span class="s1">);</span>
+                        <span class="s0">break</span><span class="s1">;</span>
+                    <span class="s0">case </span><span class="s2">&quot;Sulfide&quot;</span><span class="s1">:</span>
+                        <span class="s1">System.out.println(</span><span class="s2">&quot;Please use the method called Aeration. &quot;</span><span class="s1">);</span>
+                        <span class="s1">System.out.println(</span><span class="s2">&quot;It work by introducing air into the water can help oxidize sulfide naturally.&quot;</span><span class="s1">);</span>
+                        <span class="s0">break</span><span class="s1">;</span>
+                    <span class="s0">case </span><span class="s2">&quot;Fecal Coliform Bacteria&quot;</span><span class="s1">:</span>
+                        <span class="s1">System.out.println(</span><span class="s2">&quot;Please use the method called Chlorination. &quot;</span><span class="s1">);</span>
+                        <span class="s1">System.out.println(</span><span class="s2">&quot;Adding chlorine is a common method to disinfect water, effectively killing fecal coliform bacteria.&quot;</span><span class="s1">);</span>
+                        <span class="s0">break</span><span class="s1">;</span>
+                    <span class="s0">case </span><span class="s2">&quot;n&quot;</span><span class="s1">:</span>
+                        <span class="s1">System.out.println(</span><span class="s2">&quot;Thank you for your using this program! :D&quot;</span><span class="s1">);</span>
+                        <span class="s0">return</span><span class="s1">;</span>
+                    <span class="s0">default</span><span class="s1">:</span>
+                        <span class="s1">System.out.println(</span><span class="s2">&quot;the element is no found. :(&quot;</span><span class="s1">);</span>
+                        <span class="s0">break</span><span class="s1">;</span>
+                <span class="s1">}</span>
+                <span class="s1">System.out.println();</span>
+                <span class="s1">System.out.print(</span><span class="s2">&quot;Type the elements you need to know how to handle (type n for no need): &quot;</span><span class="s1">);</span>
+            <span class="s1">}</span>
+        <span class="s1">}</span>
+    <span class="s1">}</span>
+<span class="s1">}</span></pre>
+</body>
+</html>
